@@ -11,7 +11,6 @@ function copy(obj) {
     const keys = Reflect.ownKeys(obj);
     for (let key of keys) {
         const descriptor = Object.getOwnPropertyDescriptor(obj, key);
-        console.log(descriptor);
         if (descriptor) {
             if ('value' in descriptor) {
                 newObj[key] = copy(obj[key]);
